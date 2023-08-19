@@ -1,8 +1,5 @@
 import { Route, Routes } from "react-router-dom";
 import "./App.css";
-import PageLayout from "./components/PageLayout/PageLayout";
-import HomePage from "./pages/HomePage/HomePage";
-import QuizSetupPage from "./pages/QuizSetupPage/QuizSetupPage";
 import WorkspacePage from "./pages/WorkspacePage/WorkspacePage";
 import WorkspaceContextLayout from "./components/WorkspaceContextLayout";
 
@@ -11,12 +8,8 @@ const ROOT_PATH = "/DONUT-code/";
 function App() {
   return (
     <Routes>
-      <Route path={ROOT_PATH} element={<PageLayout />}>
-        <Route index element={<HomePage />} />
-        <Route element={<WorkspaceContextLayout />}>
-          <Route path="setup" element={<QuizSetupPage />} />
-          <Route path="workspace" element={<WorkspacePage />} />
-        </Route>
+      <Route path={ROOT_PATH} element={<WorkspaceContextLayout />}>
+        <Route index element={<WorkspacePage />} />
       </Route>
     </Routes>
   );
