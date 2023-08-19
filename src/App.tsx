@@ -6,10 +6,12 @@ import QuizSetupPage from "./pages/QuizSetupPage/QuizSetupPage";
 import WorkspacePage from "./pages/WorkspacePage/WorkspacePage";
 import WorkspaceContextLayout from "./components/WorkspaceContextLayout";
 
+const ROOT_PATH = "/DONUT-code/";
+
 function App() {
   return (
     <Routes>
-      <Route path="/" element={<PageLayout />}>
+      <Route path={ROOT_PATH} element={<PageLayout />}>
         <Route index element={<HomePage />} />
         <Route element={<WorkspaceContextLayout />}>
           <Route path="setup" element={<QuizSetupPage />} />
