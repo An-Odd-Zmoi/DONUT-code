@@ -42,7 +42,6 @@ export default function MainScreen() {
             disabled={programGenState != ProgramGenState.COMPLETE} // Other tabs disabled unless program generation method chosen.
             style={{ textTransform: "none", fontSize: "15px" }}
           />
-          {/* <Tab label="Chat" value={PanelPages.CHAT} /> */}
         </Tabs>
       </AppBar>
 
@@ -68,13 +67,6 @@ export default function MainScreen() {
         >
           <ExplanationsPanel />
         </TabPanel>
-        {/* <TabPanel
-          value={currentPanel}
-          index={PanelPages.CHAT}
-          style={{ height: "inherit" }}
-        >
-          <FeedbackPanel />
-        </TabPanel> */}
       </div>
     </>
   );
