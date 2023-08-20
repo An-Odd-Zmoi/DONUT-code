@@ -8,8 +8,8 @@ import ProgramGenState from "../models/ProgramGenState";
 import Message from "../models/Message";
 // import * as https from "https";
 
-// const API_BASE_URL = import.meta.env.VITE_API_BASE_URL;
-const API_BASE_URL = "/api";
+const API_BASE_URL = import.meta.env.VITE_API_BASE_URL;
+// const API_BASE_URL = "/api";
 const OFFLINE_MODE = false;
 
 // const instance = axios.create({

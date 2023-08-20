@@ -7,7 +7,7 @@ export default defineConfig({
   base: "/DONUT-code/",
   server: {
     proxy: {
-      "/api": {
+      "/": {
         target: "https://ec2-3-24-21-254.ap-southeast-2.compute.amazonaws.com",
         secure: false, // Set this to false to disable SSL verification
       },
