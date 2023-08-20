@@ -6,16 +6,17 @@ import Question from "../models/Question";
 import { Difficulties, parse } from "../models/Difficulty";
 import ProgramGenState from "../models/ProgramGenState";
 import Message from "../models/Message";
-import * as https from "https";
+// import * as https from "https";
 
-const API_BASE_URL = import.meta.env.VITE_API_BASE_URL;
+// const API_BASE_URL = import.meta.env.VITE_API_BASE_URL;
+const API_BASE_URL = "/api";
 const OFFLINE_MODE = false;
 
-const instance = axios.create({
-  httpsAgent: new https.Agent({
-    rejectUnauthorized: false,
-  }),
-});
+// const instance = axios.create({
+//   httpsAgent: new https.Agent({
+//     rejectUnauthorized: false,
+//   }),
+// });
 
 // const agent = new https.Agent({
 //   rejectUnauthorized: false,
@@ -145,7 +146,7 @@ function WorkspaceContextProvider({ children }: Props) {
     setProgramLoading(true);
 
     try {
-      const response = await instance.post(`${API_BASE_URL}/ai/program`, {
+      const response = await axios.post(`${API_BASE_URL}/ai/program`, {
         prompt,
         student_id: studentId,
       });
@@ -273,7 +274,7 @@ function WorkspaceContextProvider({ children }: Props) {
       }
       const program = editor.getValue();
 
-      const response = await instance.post(`${API_BASE_URL}/ai/questions`, {
+      const response = await axios.post(`${API_BASE_URL}/ai/questions`, {
         // FIXME: align camelCase
         program_id: programId, // May be empty if using custom code.
         program,
@@ -412,7 +413,7 @@ function WorkspaceContextProvider({ children }: Props) {
 
       setMessagesLoading(true);
 
-      const response = await instance.post(`${API_BASE_URL}/ai/getFeedback`, {
+      const response = await axios.post(`${API_BASE_URL}/ai/getFeedback`, {
         question_id: currentQuestion.questionId,
       });
 

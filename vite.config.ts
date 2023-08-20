@@ -5,4 +5,12 @@ import react from "@vitejs/plugin-react-swc";
 export default defineConfig({
   plugins: [react()],
   base: "/DONUT-code/",
+  server: {
+    proxy: {
+      "/api": {
+        target: "https://ec2-3-24-21-254.ap-southeast-2.compute.amazonaws.com",
+        secure: false, // Set this to false to disable SSL verification
+      },
+    },
+  },
 });
