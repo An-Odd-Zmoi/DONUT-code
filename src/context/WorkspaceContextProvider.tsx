@@ -6,7 +6,7 @@ import Question from "../models/Question";
 import { Difficulties, parse } from "../models/Difficulty";
 import ProgramGenState from "../models/ProgramGenState";
 import Message from "../models/Message";
-import https from "https";
+import * as https from "https";
 
 const API_BASE_URL = import.meta.env.VITE_API_BASE_URL;
 const OFFLINE_MODE = false;
