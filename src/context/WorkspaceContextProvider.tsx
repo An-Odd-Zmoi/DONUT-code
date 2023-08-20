@@ -11,9 +11,16 @@ import Message from "../models/Message";
 const API_BASE_URL = import.meta.env.VITE_API_BASE_URL;
 const OFFLINE_MODE = false;
 
-const agent = new https.Agent({
-  rejectUnauthorized: false,
+const instance = axios.create({
+  // ... other options ...
+  httpsAgent: new https.Agent({
+    rejectUnauthorized: false,
+  }),
 });
+
+// const agent = new https.Agent({
+//   rejectUnauthorized: false,
+// });
 export interface WorkspaceContextType {
   studentId: string;
   setStudentId: (studentId: string) => void;
@@ -139,14 +146,10 @@ function WorkspaceContextProvider({ children }: Props) {
     setProgramLoading(true);
 
     try {
-      const response = await axios.post(
-        `${API_BASE_URL}/ai/program`,
-        {
-          prompt,
-          student_id: studentId,
-        },
-        { httpsAgent: agent }
-      );
+      const response = await instance.post(`${API_BASE_URL}/ai/program`, {
+        prompt,
+        student_id: studentId,
+      });
       console.log(response);
 
       const result = response.data.result;
@@ -271,16 +274,12 @@ function WorkspaceContextProvider({ children }: Props) {
       }
       const program = editor.getValue();
 
-      const response = await axios.post(
-        `${API_BASE_URL}/ai/questions`,
-        {
-          // FIXME: align camelCase
-          program_id: programId, // May be empty if using custom code.
-          program,
-          student_id: studentId,
-        },
-        { httpsAgent: agent }
-      );
+      const response = await instance.post(`${API_BASE_URL}/ai/questions`, {
+        // FIXME: align camelCase
+        program_id: programId, // May be empty if using custom code.
+        program,
+        student_id: studentId,
+      });
       console.log(response);
 
       const result = response.data.result;
@@ -363,19 +362,15 @@ function WorkspaceContextProvider({ children }: Props) {
 
       setSubmitting(true);
 
-      const response = await axios.post(
-        `${API_BASE_URL}/ai/submitAnswer`,
-        {
-          // FIXME: align camelCase
-          student_id: studentId,
-          program_id: programId,
-          program,
-          question,
-          answer,
-          difficulty,
-        },
-        { httpsAgent: agent }
-      );
+      const response = await axios.post(`${API_BASE_URL}/ai/submitAnswer`, {
+        // FIXME: align camelCase
+        student_id: studentId,
+        program_id: programId,
+        program,
+        question,
+        answer,
+        difficulty,
+      });
       const result = response.data.result;
 
       currentQuestion.questionId = response.data.question_id;
@@ -418,13 +413,9 @@ function WorkspaceContextProvider({ children }: Props) {
 
       setMessagesLoading(true);
 
-      const response = await axios.post(
-        `${API_BASE_URL}/ai/getFeedback`,
-        {
-          question_id: currentQuestion.questionId,
-        },
-        { httpsAgent: agent }
-      );
+      const response = await instance.post(`${API_BASE_URL}/ai/getFeedback`, {
+        question_id: currentQuestion.questionId,
+      });
 
       // Add question and answer as messages
       addMessage(new Message("ChatGPT", currentQuestion.question.description));
@@ -461,14 +452,10 @@ function WorkspaceContextProvider({ children }: Props) {
 
       setResponseLoading(true);
 
-      const response = await axios.post(
-        `${API_BASE_URL}/ai/feedbackChat`,
-        {
-          question_id: currentQuestion.questionId,
-          new_prompt,
-        },
-        { httpsAgent: agent }
-      );
+      const response = await axios.post(`${API_BASE_URL}/ai/feedbackChat`, {
+        question_id: currentQuestion.questionId,
+        new_prompt,
+      });
 
       const result = response.data.result;
       console.log("Chat response: ");
@@ -501,14 +488,10 @@ function WorkspaceContextProvider({ children }: Props) {
       }
       const program = editor.getValue();
 
-      const response = await axios.post(
-        `${API_BASE_URL}/ai/explanation`,
-        {
-          program,
-          highlightedLines,
-        },
-        { httpsAgent: agent }
-      );
+      const response = await axios.post(`${API_BASE_URL}/ai/explanation`, {
+        program,
+        highlightedLines,
+      });
       console.log(response);
 
       const result = response.data.result;
