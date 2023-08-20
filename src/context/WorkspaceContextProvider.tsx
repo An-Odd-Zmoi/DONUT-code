@@ -1,18 +1,17 @@
-import React, { ReactElement, useState } from "react";
+import React, { ReactElement, useEffect, useState } from "react";
 import QuestionState from "../models/QuestionState";
 import type monaco from "monaco-editor";
 import axios from "axios";
-import https from "https";
 import Question from "../models/Question";
 import { Difficulties, parse } from "../models/Difficulty";
 import ProgramGenState from "../models/ProgramGenState";
 import Message from "../models/Message";
+import https from "https";
 
 const API_BASE_URL = import.meta.env.VITE_API_BASE_URL;
 const OFFLINE_MODE = false;
 
 const instance = axios.create({
-  // ... other options ...
   httpsAgent: new https.Agent({
     rejectUnauthorized: false,
   }),
