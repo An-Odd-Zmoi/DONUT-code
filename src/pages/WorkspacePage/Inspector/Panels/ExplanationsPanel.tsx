@@ -47,7 +47,7 @@ export default function ExplanationsPanel() {
               my: 2,
               mx: 4,
               p: 1,
-              backgroundColor: "#e3e3e3",
+              backgroundColor: "#f6f6f6",
               borderRadius: 2,
             }}
           >
