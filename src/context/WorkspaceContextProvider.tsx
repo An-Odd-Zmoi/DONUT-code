@@ -145,18 +145,45 @@ function WorkspaceContextProvider({ children }: Props) {
 
     setProgramLoading(true);
 
+    // try {
+    //   const response = await axios.post(`${API_BASE_URL}/ai/program`, {
+    //     prompt,
+    //     student_id: studentId,
+    //   });
+    //   console.log(response);
+
+    //   const result = response.data.result;
+
+    //   setProgram(result.program);
+    //   setProgramId(result.program_id);
+    //   setLanguage(result.language);
+    // } catch (error) {
+    //   console.error(error);
+    // } finally {
+    //   setProgramLoading(false);
+    // }
     try {
-      const response = await axios.post(`${API_BASE_URL}/ai/program`, {
-        prompt,
-        student_id: studentId,
+      const response = await fetch(`${API_BASE_URL}/ai/program`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          prompt,
+          student_id: studentId,
+        }),
       });
-      console.log(response);
 
-      const result = response.data.result;
+      if (response.ok) {
+        const result = await response.json();
+        console.log(result);
 
-      setProgram(result.program);
-      setProgramId(result.program_id);
-      setLanguage(result.language);
+        setProgram(result.program);
+        setProgramId(result.program_id);
+        setLanguage(result.language);
+      } else {
+        console.error(`Request failed with status: ${response.status}`);
+      }
     } catch (error) {
       console.error(error);
     } finally {
