@@ -22,8 +22,6 @@ export default function AnswerBox() {
 
   const [value, setValue] = useState("");
 
-  const [isEditing, setEditing] = useState(false);
-
   /**
    * Use this to force rerender.
    */
@@ -97,12 +95,8 @@ export default function AnswerBox() {
     await loadMessages();
   }
 
-  function handleEdit() {
-    setEditing(true);
-  }
-
-  function handleCancelEdit() {
-    setEditing(false);
+  function handleReset() {
+    resetCurrentQuestion();
   }
 
   function hasInput() {
@@ -133,31 +127,23 @@ export default function AnswerBox() {
             multiline
             rows={4}
             disabled={
-              currentQuestion.completionStatus == CompletionStatus.COMPLETED &&
-              !isEditing
+              currentQuestion.completionStatus == CompletionStatus.COMPLETED
             }
             placeholder="Type your answer here."
             onKeyDown={handleKeyDown}
           />
           <Stack direction="row" spacing={spacing}>
-            {isEditing ? (
-              <Button variant="outlined" onClick={handleCancelEdit} fullWidth>
-                Cancel
-              </Button>
-            ) : (
-              <Button
-                variant="outlined"
-                onClick={handleEdit}
-                fullWidth
-                disabled={
-                  currentQuestion.completionStatus !=
-                    CompletionStatus.COMPLETED || isSubmitting
-                }
-              >
-                Edit Answer
-              </Button>
-            )}
-
+            <Button
+              variant="outlined"
+              onClick={handleReset}
+              fullWidth
+              disabled={
+                currentQuestion.completionStatus !=
+                  CompletionStatus.COMPLETED || isSubmitting
+              }
+            >
+              Edit Answer
+            </Button>
             {currentQuestion.completionStatus == CompletionStatus.COMPLETED &&
             !isSubmitting ? (
               <Button variant="contained" onClick={handleFeedback} fullWidth>

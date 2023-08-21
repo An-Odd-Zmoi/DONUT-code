@@ -359,9 +359,6 @@ function WorkspaceContextProvider({ children }: Props) {
 
       setSubmitting(true);
 
-      // Clear existing question
-      resetCurrentQuestion();
-
       const response = await axios.post(`${API_BASE_URL}/ai/submitAnswer`, {
         // FIXME: align camelCase
         student_id: studentId,
