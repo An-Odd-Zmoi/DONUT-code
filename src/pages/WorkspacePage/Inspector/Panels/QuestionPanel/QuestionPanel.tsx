@@ -60,6 +60,7 @@ function ProgramGenInfo() {
       >
         <Typography variant="body1" sx={{ fontFamily: "serif" }}>
           <b>*** Important ***</b>
+          <br />
           Before we start, first things first, due the fact that we are broke
           part 4 students, we could not obtain a proper SSL certificate, so for
           the website to function properly, we had to use a self-signed
