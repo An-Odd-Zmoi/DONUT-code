@@ -1,5 +1,6 @@
 import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react-swc";
+import fs from "fs";
 
 // https://vitejs.dev/config/
 export default defineConfig({
@@ -9,7 +10,7 @@ export default defineConfig({
     proxy: {
       "/": {
         target: "https://ec2-3-24-21-254.ap-southeast-2.compute.amazonaws.com",
-        secure: false, // Set this to false to disable SSL verification
+        secure: false,
       },
     },
   },
