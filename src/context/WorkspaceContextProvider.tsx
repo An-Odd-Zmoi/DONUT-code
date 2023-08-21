@@ -262,12 +262,20 @@ function WorkspaceContextProvider({ children }: Props) {
         throw new Error("Editor ref is undefined.");
       }
       const program = editor.getValue();
+      let pastQuestions: string[] = [];
+
+      if (questionStates) {
+        pastQuestions = questionStates.map(
+          (state) => state.question.description
+        );
+      }
 
       const response = await axios.post(`${API_BASE_URL}/ai/questions`, {
         // FIXME: align camelCase
         program_id: programId, // May be empty if using custom code.
         program,
         student_id: studentId,
+        current_questions: pastQuestions,
       });
       console.log(response);
 
