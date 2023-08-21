@@ -6,21 +6,10 @@ import Question from "../models/Question";
 import { Difficulties, parse } from "../models/Difficulty";
 import ProgramGenState from "../models/ProgramGenState";
 import Message from "../models/Message";
-// import * as https from "https";
 
 const API_BASE_URL = import.meta.env.VITE_API_BASE_URL;
-// const API_BASE_URL = "/api";
 const OFFLINE_MODE = false;
 
-// const instance = axios.create({
-//   httpsAgent: new https.Agent({
-//     rejectUnauthorized: false,
-//   }),
-// });
-
-// const agent = new https.Agent({
-//   rejectUnauthorized: false,
-// });
 export interface WorkspaceContextType {
   studentId: string;
   setStudentId: (studentId: string) => void;
