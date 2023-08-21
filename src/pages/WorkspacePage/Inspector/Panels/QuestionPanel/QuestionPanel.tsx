@@ -59,11 +59,11 @@ function ProgramGenInfo() {
         }}
       >
         <Typography variant="body1" sx={{ fontFamily: "serif" }}>
-          <b>*** Important ***</b>
+          <b>*** Important Please Read ***</b>
           <br />
-          Before we start, first things first, due the fact that we are broke
-          part 4 students, we could not obtain a proper SSL certificate, so for
-          the website to function properly, we had to use a self-signed
+          <b>Before we start,</b> first thing first, due the fact that we are
+          broke part IV students, we could not obtain a proper SSL certificate,
+          so for the website to function properly, we had to use a self-signed
           certificate.
           <br />
           <br />
@@ -80,9 +80,15 @@ function ProgramGenInfo() {
           </b>
           <br />
           <br />
-          Click on <b>Advanced</b> and at the bottom of your screen, click on{" "}
+          Click on{" "}
           <b>
-            Proceed to ec2-3-24-21-254.ap-southeast-2.compute.amazonaws.com{" "}
+            <i>Advanced</i>
+          </b>{" "}
+          and at the bottom of your screen, click on{" "}
+          <b>
+            <i>
+              Proceed to ec2-3-24-21-254.ap-southeast-2.compute.amazonaws.com{" "}
+            </i>
           </b>
           . You can now close that link, it will allow you to use our website
           properly. Apologies for the inconvenience.
