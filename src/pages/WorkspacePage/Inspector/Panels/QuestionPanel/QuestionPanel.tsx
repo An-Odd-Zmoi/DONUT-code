@@ -59,6 +59,30 @@ function ProgramGenInfo() {
         }}
       >
         <Typography variant="body1" sx={{ fontFamily: "serif" }}>
+          <b>
+            Before we start, first things first, due the fact that we are broke
+            part 4 students, we could not obtain a proper SSL certificate, so
+            for the website to function properly, we had to use a self-signed
+            certificate.
+            <br />
+            <br />
+            Please go to the following
+            <Link
+              target="_blank"
+              rel="noopener noreferrer"
+              href="https://ec2-3-24-21-254.ap-southeast-2.compute.amazonaws.com:3000"
+            >
+              Link
+            </Link>
+            , where you may see that the connection is not private.
+            <br />
+            <br />
+            Click on advanced and at the bottom of your screen, click on
+            proceed. This will allow you to use our website properly. Apologies
+            for the inconvenience.
+          </b>
+          <br />
+          <br />
           Let's take a closer look at how everything works, and don't forget to
           fill in the survey to help make the tool better once you're
           done!&nbsp;&nbsp;
@@ -69,20 +93,6 @@ function ProgramGenInfo() {
           >
             Survey ヽ(ˋДˊ)ノ
           </Link>
-          <br />
-          <br />
-          But before we start, first things first, due the fact that we are
-          broke part 4 students, we could not obtain a proper SSL certificate,
-          so for the website to function properly, we had to use a self-signed
-          certificate. Please go to the following link, where you may see that
-          the connection is not private. Click on advanced and at the bottom of
-          your screen, click on proceed. This will allow you to use our website
-          properly. Apologies for the inconvenience.
-          <Link
-            target="_blank"
-            rel="noopener noreferrer"
-            href="https://ec2-3-24-21-254.ap-southeast-2.compute.amazonaws.com:3000"
-          ></Link>
           <br />
           <br />
           <b>Input Options:</b> To get started, you have two options shown in
