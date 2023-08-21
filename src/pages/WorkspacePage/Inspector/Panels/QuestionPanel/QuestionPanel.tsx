@@ -61,9 +61,9 @@ function ProgramGenInfo() {
         <Typography variant="body1" sx={{ fontFamily: "serif" }}>
           <b>*** Important Please Read ***</b>
           <br />
-          <b>Before we start,</b> first thing first, due the fact that we are
-          broke part IV students, we could not obtain a proper SSL certificate,
-          so for the website to function properly, we had to use a self-signed
+          Before we start, first thing first, due the fact that we are broke
+          part IV students, we could not obtain a proper SSL certificate, so for
+          the website to function properly, we had to use a self-signed
           certificate.
           <br />
           <br />
@@ -92,6 +92,18 @@ function ProgramGenInfo() {
           </b>
           . You can now close that link, it will allow you to use our website
           properly. Apologies for the inconvenience.
+          <br />
+          <br />
+          <i>
+            If you have any questions, feel free to drop it into our&nbsp;
+            <Link
+              target="_blank"
+              rel="noopener noreferrer"
+              href="https://discord.gg/qGDQV4t3A"
+            >
+              Discord Channel
+            </Link>
+          </i>
           <br />
           <br />
           Let's get started, and take a closer look at how everything works, and
