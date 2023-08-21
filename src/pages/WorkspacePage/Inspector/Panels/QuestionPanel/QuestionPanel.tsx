@@ -59,14 +59,15 @@ function ProgramGenInfo() {
         }}
       >
         <Typography variant="body1" sx={{ fontFamily: "serif" }}>
+          <b>*** Important ***</b>
+          Before we start, first things first, due the fact that we are broke
+          part 4 students, we could not obtain a proper SSL certificate, so for
+          the website to function properly, we had to use a self-signed
+          certificate.
+          <br />
+          <br />
           <b>
-            Before we start, first things first, due the fact that we are broke
-            part 4 students, we could not obtain a proper SSL certificate, so
-            for the website to function properly, we had to use a self-signed
-            certificate.
-            <br />
-            <br />
-            Please go to the following
+            Please go to the following&nbsp;
             <Link
               target="_blank"
               rel="noopener noreferrer"
@@ -75,17 +76,20 @@ function ProgramGenInfo() {
               Link
             </Link>
             , where you may see that the connection is not private.
-            <br />
-            <br />
-            Click on advanced and at the bottom of your screen, click on
-            proceed. This will allow you to use our website properly. Apologies
-            for the inconvenience.
           </b>
           <br />
           <br />
-          Let's take a closer look at how everything works, and don't forget to
-          fill in the survey to help make the tool better once you're
-          done!&nbsp;&nbsp;
+          Click on <b>Advanced</b> and at the bottom of your screen, click on{" "}
+          <b>
+            Proceed to ec2-3-24-21-254.ap-southeast-2.compute.amazonaws.com{" "}
+          </b>
+          . You can now close that link, it will allow you to use our website
+          properly. Apologies for the inconvenience.
+          <br />
+          <br />
+          Let's get started, and take a closer look at how everything works, and
+          don't forget to fill in the survey to help make the tool better once
+          you're done!&nbsp;&nbsp;
           <Link
             target="_blank"
             rel="noopener noreferrer"
