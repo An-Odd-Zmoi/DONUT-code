@@ -88,21 +88,24 @@ function ProgramGenInfo() {
           <b>Step 1: Accessing and enabling the Tool:</b> Before we dive in,
           please note that we currently use a self-signed certificate due to
           resource limitations. To access the tool, follow these steps:
-          <br />
-          <br />
-          Click on the following link:&nbsp;
-          <Link
-            target="_blank"
-            rel="noopener noreferrer"
-            href="https://ec2-3-24-21-254.ap-southeast-2.compute.amazonaws.com:3000"
-          >
-            Access DONUT
-          </Link>
-          . Your browser might show a security warning. Click on "Advanced" and
-          then select "Proceed" at the bottom of the website, we apologise for
-          any inconvenience.
-          <br />
-          <br />
+          <ol>
+            <li>
+              Click on the following link:&nbsp;
+              <Link
+                target="_blank"
+                rel="noopener noreferrer"
+                href="https://ec2-3-24-21-254.ap-southeast-2.compute.amazonaws.com:3000"
+              >
+                Access DONUT
+              </Link>
+              . Your browser might show a security warning.
+            </li>
+            <li>
+              Click on "Advanced" and then select "Proceed" at the bottom of the
+              website
+            </li>
+            we apologise for any inconvenience.
+          </ol>
           <b>Step 2: Choose Your Method:</b> Once you're back on this tool,
           let's get started! We offer two options for your practice:
           <br />
