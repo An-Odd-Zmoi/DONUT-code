@@ -75,8 +75,7 @@ function ProgramGenInfo() {
             Survey ヽ(ˋДˊ)ノ
           </Link>
           <br />
-          <br />
-          More detailed versiono the tutorial is available here:&nbsp;
+          <br />A more detailed version of the tutorial is available here:&nbsp;
           <Link
             target="_blank"
             rel="noopener noreferrer"
