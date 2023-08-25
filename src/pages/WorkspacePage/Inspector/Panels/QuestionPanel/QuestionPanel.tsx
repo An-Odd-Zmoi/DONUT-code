@@ -76,6 +76,16 @@ function ProgramGenInfo() {
           </Link>
           <br />
           <br />
+          More detailed versiono the tutorial is available here:&nbsp;
+          <Link
+            target="_blank"
+            rel="noopener noreferrer"
+            href="https://docs.google.com/document/d/1CapvuiEKWgoYLVXBFq8gmmJa2XejNG1N5ch7HkdZ3Wc/edit?usp=sharing"
+          >
+            DONUT Code Tutorial
+          </Link>
+          <br />
+          <br />
           <b>Step 1: Accessing and enabling the Tool:</b> Before we dive in,
           please note that we currently use a self-signed certificate due to
           resource limitations. To access the tool, follow these steps:
