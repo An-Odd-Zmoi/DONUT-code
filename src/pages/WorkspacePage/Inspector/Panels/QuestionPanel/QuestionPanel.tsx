@@ -157,7 +157,6 @@ function ProgramGenInfo() {
           <br />
           <br />
           <b>In Summary:</b>
-          <br />
           <ul>
             <li>Access and enable the tool using the provided link.</li>
             <li>
@@ -182,8 +181,6 @@ function ProgramGenInfo() {
               the best we can!
             </li>
           </ul>
-          <br />
-          <br />
           Remember, our aim is to make coding comprehension a breeze. Happy
           practising, and best of luck with your coding journey!
         </Typography>
