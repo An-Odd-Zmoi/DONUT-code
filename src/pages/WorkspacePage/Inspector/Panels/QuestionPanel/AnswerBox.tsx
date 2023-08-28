@@ -22,6 +22,8 @@ export default function AnswerBox() {
 
   const [value, setValue] = useState("");
 
+  const [isEditing, setEditing] = useState(false);
+
   /**
    * Use this to force rerender.
    */
@@ -79,6 +81,7 @@ export default function AnswerBox() {
     }
 
     currentQuestion.completed();
+    setEditing(false);
 
     // FIXME: force rerender to show completed status
     setTrigger((prev) => !prev);
@@ -95,8 +98,12 @@ export default function AnswerBox() {
     await loadMessages();
   }
 
-  function handleReset() {
-    resetCurrentQuestion();
+  function handleEdit() {
+    setEditing(true);
+  }
+
+  function handleCancelEdit() {
+    setEditing(false);
   }
 
   function hasInput() {
@@ -127,25 +134,34 @@ export default function AnswerBox() {
             multiline
             rows={4}
             disabled={
-              currentQuestion.completionStatus == CompletionStatus.COMPLETED
+              currentQuestion.completionStatus == CompletionStatus.COMPLETED &&
+              !isEditing
             }
             placeholder="Type your answer here."
             onKeyDown={handleKeyDown}
           />
           <Stack direction="row" spacing={spacing}>
-            <Button
-              variant="outlined"
-              onClick={handleReset}
-              fullWidth
-              disabled={
-                currentQuestion.completionStatus !=
-                  CompletionStatus.COMPLETED || isSubmitting
-              }
-            >
-              Edit Answer
-            </Button>
+            {isEditing ? (
+              <Button variant="outlined" onClick={handleCancelEdit} fullWidth>
+                Cancel
+              </Button>
+            ) : (
+              <Button
+                variant="outlined"
+                onClick={handleEdit}
+                fullWidth
+                disabled={
+                  currentQuestion.completionStatus !=
+                    CompletionStatus.COMPLETED || isSubmitting
+                }
+              >
+                Edit Answer
+              </Button>
+            )}
+
             {currentQuestion.completionStatus == CompletionStatus.COMPLETED &&
-            !isSubmitting ? (
+            !isSubmitting &&
+            !isEditing ? (
               <Button variant="contained" onClick={handleFeedback} fullWidth>
                 See Feedback
               </Button>

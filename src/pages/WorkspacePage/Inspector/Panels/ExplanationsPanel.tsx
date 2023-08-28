@@ -13,11 +13,14 @@ import { WorkspaceContext } from "../../../../context/WorkspaceContextProvider";
 
 export default function ExplanationsPanel() {
   const [isLinesHighlighted, setIsLinesHighlighted] = useState(false);
-  const { highlightedLines, setHighlightedLines } =
-    useContext(WorkspaceContext);
-  const { explanation, setExplanation } = useContext(WorkspaceContext);
-  const { generateExplanation } = useContext(WorkspaceContext);
-  const { explanationLoading } = useContext(WorkspaceContext);
+  const {
+    explanation,
+    setExplanation,
+    explanationLoading,
+    generateExplanation,
+    highlightedLines,
+    setHighlightedLines,
+  } = useContext(WorkspaceContext);
 
   useEffect(() => {
     setIsLinesHighlighted(highlightedLines.length > 0);
@@ -67,7 +70,7 @@ export default function ExplanationsPanel() {
         <Typography variant="body1">
           <Button
             variant="contained"
-            disabled={!isLinesHighlighted}
+            disabled={!isLinesHighlighted || explanationLoading}
             onClick={onGenerateButtonClicked}
             sx={{ mb: 2 }}
           >
