@@ -25,10 +25,12 @@ export default function InputOptions() {
 
       case ProgramGenState.CUSTOM_CODE:
         setEditorDisabled(false);
+        setEditorReadOnly(false);
         break;
 
       default:
         setEditorDisabled(true);
+        setEditorReadOnly(true);
     }
   }, [programGenState]);
 
