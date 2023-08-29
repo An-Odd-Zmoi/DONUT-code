@@ -58,7 +58,11 @@ function ProgramGenInfo() {
           textAlign: "left",
         }}
       >
-        <Typography variant="body1" sx={{ fontFamily: "serif" }}>
+        <Typography
+          variant="body1"
+          component="div"
+          sx={{ fontFamily: "serif" }}
+        >
           <b>Introduction:</b>
           <br />
           Welcome to DONUT Code, your go-to tool for enhancing your coding
