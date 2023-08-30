@@ -7,6 +7,7 @@ import { useContext, useEffect } from "react";
 import { WorkspaceContext } from "../../context/WorkspaceContextProvider";
 import TutorialModal from "./TutorialModal";
 import InfoButton from "./InfoButton";
+import ErrorList from "./ErrorList";
 
 // Whether to generate questions immediately when the page is loaded.
 const generateOnLoad = false;
@@ -77,6 +78,7 @@ export default function WorkspacePage() {
       </Box>
       <InfoButton />
       {isTutorialOpen && <TutorialModal />}
+      {/* <ErrorList /> */}
     </ThemeProvider>
   );
 }
