@@ -4,6 +4,8 @@ import { spacing } from "../../../../SharedStyles";
 import { WorkspaceContext } from "../../../../../../context/WorkspaceContextProvider";
 import Message from "../../../../../../models/Message";
 
+const MAX_MESSAGE_LENGTH = 200;
+
 export default function MessageInput() {
   const { sendChatPrompt, responseLoading } = useContext(WorkspaceContext);
 
@@ -41,6 +43,13 @@ export default function MessageInput() {
         multiline
         disabled={responseLoading}
         placeholder="Ask your follow ups here"
+        inputProps={{ maxLength: MAX_MESSAGE_LENGTH }}
+        error={message.length > MAX_MESSAGE_LENGTH - 10}
+        helperText={
+          message.length >= MAX_MESSAGE_LENGTH - 10
+            ? "Please keep your message short."
+            : ""
+        }
       />
       {responseLoading ? (
         <CircularProgress

@@ -120,6 +120,22 @@ function WorkspaceContextProvider({ children }: Props) {
   const [programId, setProgramId] = useState("");
   const [programLoading, setProgramLoading] = useState(false);
 
+  const MAX_PROGRAM_LENGTH = 2000;
+
+  function truncateProgram(program: string, alertUser = false) {
+    if (program.length > MAX_PROGRAM_LENGTH) {
+      program = program.slice(0, MAX_PROGRAM_LENGTH);
+
+      if (alertUser) {
+        alert(
+          `Your program was too long and has been truncated to ${MAX_PROGRAM_LENGTH} characters: \n\n` +
+            program
+        );
+      }
+    }
+    return program;
+  }
+
   const generateProgram = async (prompt: string) => {
     console.log(`Generating program with prompt: "${prompt}".`);
 
@@ -261,7 +277,7 @@ function WorkspaceContextProvider({ children }: Props) {
       if (!editor) {
         throw new Error("Editor ref is undefined.");
       }
-      const program = editor.getValue();
+      const program = truncateProgram(editor.getValue(), true);
       let pastQuestions: string[] = [];
 
       if (questionStates) {
@@ -483,7 +499,7 @@ function WorkspaceContextProvider({ children }: Props) {
       if (!editor) {
         throw new Error("Editor ref is undefined.");
       }
-      const program = editor.getValue();
+      const program = truncateProgram(editor.getValue());
 
       const response = await axios.post(`${API_BASE_URL}/ai/explanation`, {
         program,
@@ -521,6 +537,8 @@ function WorkspaceContextProvider({ children }: Props) {
 
     setLanguage(DEFAULT_language);
   };
+
+  // const [errorList, setErrorList] = useState
 
   const context = {
     studentId,

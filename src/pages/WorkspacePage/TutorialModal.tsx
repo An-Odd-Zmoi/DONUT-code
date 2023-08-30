@@ -157,6 +157,7 @@ export default function TutorialModal() {
                 onChange={(e) => setTempStudentId(e.target.value)}
                 placeholder="e.g: 123456789"
                 onKeyDown={handleKeyDown}
+                inputProps={{ maxLength: 12 }}
               />
             </Stack>
           )}
