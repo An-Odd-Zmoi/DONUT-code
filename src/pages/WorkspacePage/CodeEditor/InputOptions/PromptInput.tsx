@@ -11,6 +11,8 @@ import ProgramGenState from "../../../../models/ProgramGenState";
 import { spacing } from "../../SharedStyles";
 import { WorkspaceContext } from "../../../../context/WorkspaceContextProvider";
 
+const MAX_PROMPT_LENGTH = 200;
+
 export default function PromptInput() {
   const {
     setPrompt,
@@ -79,6 +81,13 @@ export default function PromptInput() {
           disabled={programLoading}
           placeholder="E.g. Generate a function in python that performs binary search."
           onKeyDown={handleKeyDown}
+          inputProps={{ maxLength: MAX_PROMPT_LENGTH }}
+          error={value.length > MAX_PROMPT_LENGTH - 10}
+          helperText={
+            value.length >= MAX_PROMPT_LENGTH - 10
+              ? "Please keep your prompt short."
+              : ""
+          }
         />
         <Stack spacing={spacing} direction="row">
           {programLoading ? (

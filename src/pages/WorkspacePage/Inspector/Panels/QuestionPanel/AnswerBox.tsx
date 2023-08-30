@@ -7,6 +7,8 @@ import QuestionState, {
   CompletionStatus,
 } from "../../../../../models/QuestionState";
 
+const MAX_ANSWER_LENGTH = 200;
+
 export default function AnswerBox() {
   const {
     questionUpdatedFlag,
@@ -139,6 +141,13 @@ export default function AnswerBox() {
             }
             placeholder="Type your answer here."
             onKeyDown={handleKeyDown}
+            inputProps={{ maxLength: MAX_ANSWER_LENGTH }}
+            error={value.length > MAX_ANSWER_LENGTH - 10}
+            helperText={
+              value.length >= MAX_ANSWER_LENGTH - 10
+                ? "Please keep your answer short."
+                : ""
+            }
           />
           <Stack direction="row" spacing={spacing}>
             {isEditing ? (
