@@ -67,10 +67,10 @@ function ProgramGenInfo() {
           <br />
           Welcome to DONUT Code, your go-to tool for enhancing your coding
           understanding skills! Whether you're struggling with concepts from
-          CS101 or aiming to deepen your understanding of code snippets, this
-          tool is designed to help you practise and improve. Once you are done
-          with the session, don't forget to fill in the survey to help make the
-          tool better!&nbsp;&nbsp;
+          CS101 or aiming for a perfect score in your upcoming tests, this tool
+          is designed to help you practise and improve. Once you are done with
+          the session, don't forget to fill in the survey to help make the tool
+          better!&nbsp;&nbsp;
           <Link
             target="_blank"
             rel="noopener noreferrer"
