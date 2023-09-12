@@ -90,9 +90,21 @@ export default function TutorialModal() {
                 <span>
                   Hello and welcome to the Code Comprehension Tool! We're
                   excited to have you here. This tool is designed to help you
-                  improve your code understanding abilities. Here's a quick look
-                  at the basic features:
+                  improve your code understanding abilities.
                   <br />
+                  <br />
+                  Please check out our{" "}
+                  <Link
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    href="https://docs.google.com/document/d/1JpWWJSG2N8YEp4Yiym9CiO-kdrucYlpaV6iFBBxXYuA/edit?usp=sharing"
+                  >
+                    Guided Tour
+                  </Link>{" "}
+                  for using the tool!
+                  <br />
+                  <br />
+                  Here's a quick look at the basic features:
                   <br />
                   <b>Generate Questions:</b> You can input a prompt or your own
                   code and generate questions to test your understanding.
@@ -133,7 +145,15 @@ export default function TutorialModal() {
                   <br />
                   <br />
                   Encountered an issue? Let us know! Fill out our error report
-                  form to help us improve the tool and provide you with a
+                  form or join our{" "}
+                  <Link
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    href="http://discord.com/invite/qGDQV4t3A"
+                  >
+                    Discord
+                  </Link>
+                  &nbsp;to help us improve the tool and provide you with a
                   seamless learning journey.&nbsp;&nbsp;
                   <Link
                     target="_blank"
