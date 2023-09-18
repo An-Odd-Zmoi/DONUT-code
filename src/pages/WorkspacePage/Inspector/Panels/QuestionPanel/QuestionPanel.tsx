@@ -67,10 +67,9 @@ function ProgramGenInfo() {
           <br />
           Welcome to DONUT Code, your go-to tool for enhancing your coding
           understanding skills! Whether you're struggling with concepts from
-          CS101 or aiming for a perfect score in your upcoming tests, this tool
-          is designed to help you practise and improve. Once you are done with
-          the session, don't forget to fill in the survey to help make the tool
-          better!&nbsp;&nbsp;
+          your programming course or aiming for a perfect score in your upcoming
+          tests, this tool is designed to help you practise and improve. Once
+          you are done with the session, don't forget to fill in the&nbsp;
           <Link
             target="_blank"
             rel="noopener noreferrer"
@@ -79,14 +78,16 @@ function ProgramGenInfo() {
             Survey ヽ(ˋДˊ)ノ
           </Link>
           <br />
-          <br />A more detailed version of the tutorial is available here:&nbsp;
+          <br />
+          Please check out our&nbsp;
           <Link
             target="_blank"
             rel="noopener noreferrer"
-            href="https://docs.google.com/document/d/1CapvuiEKWgoYLVXBFq8gmmJa2XejNG1N5ch7HkdZ3Wc/edit?usp=sharing"
+            href="https://docs.google.com/document/d/1JpWWJSG2N8YEp4Yiym9CiO-kdrucYlpaV6iFBBxXYuA/edit?usp=sharing"
           >
-            DONUT Code Tutorial
+            Guided Tour
           </Link>
+          &nbsp;for a quick overview for using the tool!
           <br />
           <br />
           <b>Step 1: Accessing and enabling the Tool:</b> Before we dive in,
@@ -114,14 +115,17 @@ function ProgramGenInfo() {
           let's get started! We offer two options for your practice:
           <br />
           <br />
-          <b>Prompt Method:</b> Are there coding concepts bugging you? Maybe
-          nested loops, matrices, or Python file reading? Use this method to
-          generate practice questions based on your prompt. For example, "Nested
-          loop in Python" or "File reading example in Python." For more
-          personalised examples, provide additional details in your prompt.
+          <b>Prompt Method:</b> Are there coding concepts bugging you? Use this
+          method to generate practice questions based on your prompt. For
+          example, "File reading example in Python" or "C program that swaps the
+          values of two integers using pointers".
           <br />
           <br />
-          For a list of example prompts:&nbsp;
+          For more personalised examples, please provide additional details in
+          your prompt.
+          <br />
+          Just to give you some ideas, you can check out these example
+          prompts:&nbsp;
           <Link
             target="_blank"
             rel="noopener noreferrer"
@@ -131,9 +135,9 @@ function ProgramGenInfo() {
           </Link>
           <br />
           <br />
-          <b>Custom Code Input:</b> Have a specific code snippet from your CS101
-          lectures that you're struggling to understand? No worries! You can
-          paste the code directly into the editor using this method.
+          <b>Custom Code Input:</b> Have a specific code snippet from your
+          programming course that you're struggling to understand? No worries!
+          You can paste the code directly into the editor using this method.
           <br />
           <br />
           <b>Step 3: Generating Questions:</b> Once you've provided your prompt
