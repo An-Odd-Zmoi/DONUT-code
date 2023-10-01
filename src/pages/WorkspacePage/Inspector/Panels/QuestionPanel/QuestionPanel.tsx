@@ -73,7 +73,7 @@ function ProgramGenInfo() {
           <Link
             target="_blank"
             rel="noopener noreferrer"
-            href="https://forms.gle/2trxnp6urSNq22xAA"
+            href="https://forms.gle/4mLX14LkqTVfwSLE6"
           >
             Survey ヽ(ˋДˊ)ノ
           </Link>
@@ -169,7 +169,7 @@ function ProgramGenInfo() {
           <Link
             target="_blank"
             rel="noopener noreferrer"
-            href="https://forms.gle/2trxnp6urSNq22xAA"
+            href="https://forms.gle/4mLX14LkqTVfwSLE6"
           >
             survey
           </Link>{" "}
@@ -190,7 +190,7 @@ function ProgramGenInfo() {
               <Link
                 target="_blank"
                 rel="noopener noreferrer"
-                href="https://forms.gle/2trxnp6urSNq22xAA"
+                href="https://forms.gle/4mLX14LkqTVfwSLE6"
               >
                 survey
               </Link>{" "}
